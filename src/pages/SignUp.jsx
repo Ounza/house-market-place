@@ -6,6 +6,7 @@ import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/a
 import {db} from '../firebase.config'
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
 import {toast} from 'react-toastify'
+import OAuth from '../components/OAuth'
 function SignUp() {
     const [showPassword, setShowPassword] = useState(false)
     const [formData, setFormData] = useState({
@@ -70,7 +71,7 @@ function SignUp() {
                         </button>
                     </div>
                 </form>
-                {/*Google OAuth*/}
+                <OAuth/>
                 <Link to='/sign-in' className='registerLink'>
                     Sign In Instead
                 </Link>
